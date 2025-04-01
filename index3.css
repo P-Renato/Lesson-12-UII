@@ -1,0 +1,51 @@
+:root{
+    --lightness: 80%;
+    --text-lightness: 20%; 
+
+    --bg1: hsl( 0, 80%, var(--lightness));
+    --bg2: hsl( 100, 80%,  var(--lightness));
+    --text-color: hsl( 200, 80%, var(--text-lightness));
+
+}
+
+
+body {
+    margin: 0;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: 100px 50px 1fr 100px;
+    grid-template-areas: 
+    'head head'
+    'nav  nav'
+    'side main'
+    'side foot';
+    gap: 1em;
+    background-color: var(--bg1);
+    border: 1em solid var(--bg1);
+    color: var(--text-color);
+}
+
+body > * {
+    background-color: var(--bg2);
+    padding: 1em;
+}
+
+header {
+    grid-area: head;
+}
+
+nav {
+    grid-area: nav;
+}
+
+aside {
+    grid-area: side;
+}
+
+main {
+    grid-area: main;
+}
+
+footer {
+    grid-area: foot
+}
